@@ -1,0 +1,35 @@
+메뉴 관리자(Menu Manager)
+
+사이드 메뉴
+	책
+		좋은책
+		나쁜책
+	강의
+		좋은강의
+		나쁜강의
+	컴퓨터
+		데스크톱
+		노트북
+
+메뉴 데이터 
+	- 인-메모리
+	- XML
+	- SQL
+
+MenuBase => IMenuRepository, IMenuBase, ...
+	-> MenuDataInMemory
+	-> MenuDataInSql
+		-> MenuDataSqlServer
+		-> MenuDataOracle
+	-> MenuDataXml
+
+MenuProviderContainer(new MenuBase()) => 각각의 리피지터리 개체 생성
+
+
+MenuDataInSql
+	DB: 로컬DB
+	데이터베이스: MenuManager
+	테이블: Menus
+
+
+
